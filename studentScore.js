@@ -23,11 +23,13 @@ function distributeBook (arrOfBooks, nameOfStudents) {
     }
     return newObj;
 }
-
-function getAfternoonTime (timeGiven) {
-    
-    let afternooonTime = ["1:00 PM", "3:00 PM", "5:00 PM"]
-    return afternooonTime;
-    
+let timeGiven = ["9:00 AM",
+    "11:00 AM", "1:00 PM", "3:00 PM", "5:00 PM"];
+const getAfternoonTime = (timeGiven) => {
+    const afternooonTime = timeGiven.filter((num) => num.includes("PM"));
+    return afternooonTime; 
 }
+
+    let ans = getAfternoonTime(timeGiven)
+console.log(ans)
 module.exports = {testStudentScore, addFive, getSquare, distributeBook, getAfternoonTime};
